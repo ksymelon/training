@@ -13,9 +13,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
-public class test1 {
+public class test2 {
 
-     private WebDriver driver;
+    private WebDriver driver;
 
     @Before
     public void Start() {
@@ -24,11 +24,14 @@ public class test1 {
 
 
     @Test
-    public void test1() {
-        driver.get("http://www.google.com");
-        driver.quit();
+    public void test2() {
+        driver.get("http://localhost/litecart/admin/login.php");
+        driver.findElement(By.name("username")).sendKeys("admin");
+        driver.findElement(By.name("password")).sendKeys("admin");
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
     }
 
 
 
 }
+
